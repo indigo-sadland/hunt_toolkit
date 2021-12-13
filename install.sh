@@ -17,6 +17,7 @@ sudo apt install john -y
 main=$HOME/hunt
 mkdir $main
 
+echo ""
 echo "---MANAGING RECON TOOLS---"
 
 # Recon
@@ -51,7 +52,7 @@ echo "INSTALLING GOBUSTER"
 git clone https://github.com/OJ/gobuster && cd gobuster && go get && go build
 echo ""
 echo "COPYING BINARY TO /ust/loca/bin"
-sudo cp gobuster /usr/loca/bin
+sudo cp gobuster /usr/local/bin
 
 cd $recon
 
@@ -154,7 +155,7 @@ cd $recon
 
 # GitTools
 echo "CLONNING GITTOOLS"
-git clone https://github.com/internetwache/GitTools && cd Finder && pip3 install -r requirements.txt
+git clone https://github.com/internetwache/GitTools && cd GitTools/Finder && pip3 install -r requirements.txt
 echo ""
 
 echo "------"
@@ -162,6 +163,7 @@ echo "------"
 
 
 echo "---MANAGING SCANNERS---"
+echo ""
 
 scanners=$main/scanners
 mkdir $scanners
@@ -190,12 +192,13 @@ cd $scanners
 
 # metasploit
 echo "DOWNLOADING METASPLOIT"
-wget http://downloads.metasploit.com/data/releases/metasploit-latest-linux-installer.run 
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 echo "INSTALING METASPLOIT"
-chmod +x metasploit-latest-linux-installer.run
-sudo ./metasploit-latest-linux-installer.run
+chmod +x msfinstall
+sudo ./msfinstall
+sudo msfdb init
 sudo msfupdate
-rm metasploit-latest-linux-installer.run
+rm msfinstall
 echo ""
 
 # CORScanner
@@ -207,13 +210,14 @@ cd $scanners
 
 # cariddi
 echo "CLONNING CARIDDI"
-git clone https://github.com/edoardottt/cariddi; cd cariddi; go get; sudo make linux
+git clone https://github.com/edoardottt/cariddi && cd cariddi && go get && sudo make linux
 echo ""
 
 cd $scanners
 
 # crlfuzz
-echo "CLONNING CRLFUZZ
+scanners=$HOME/scanners
+echo "CLONNING CRLFUZZ"
 git clone https://github.com/dwisiswant0/crlfuzz && cd crlfuzz/cmd/crlfuzz && go build .
 echo "COPYING BINARY TO /usr/local/bin"
 sudo cp crlfuzz /usr/local/bin
@@ -256,7 +260,7 @@ echo "------"
 echo "---MANAGING UNCATECORIZED TOOLS---"
 
 other=$HOME/other
-mdkrid $other
+mkdir $other
 
 cd $other
 
@@ -265,7 +269,7 @@ echo "CLONNING CEWL"
 git clone https://github.com/digininja/CeWL && cd CeWL
 echo "INSTALLING CEWL DEPENDENCIES"
 sudo gem install bundler
-sudo bundle install
+bundle install
 echo ""
 
 cd $other
