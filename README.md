@@ -5,6 +5,7 @@
 ### Recon
 - amass
 - ffuf
+- pymeta
 - gobuster
 - secLists
 - wordlists
@@ -12,7 +13,9 @@
 - dns wordlist
 - spiderfoot
 - aquatone
+- feroxbuster
 - bfac
+- holehe
 - goaltdns
 - jsfcan
 - httprobe
@@ -22,6 +25,7 @@
 ### Scanners
 - sqlmap
 - wpscan
+- log4j-scan
 - dalfox
 - metasploit
 - corscanner
