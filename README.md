@@ -31,6 +31,7 @@
 - corscanner
 - cariddi
 - crlfuzz
+- nmap
 
 ### Enum/Privesc
 - PEAS-ng
