@@ -30,6 +30,8 @@ recon=$main/recon
 mkdir $recon
 cd $recon
 
+wrdlst=$recon/wrdlists
+
 # Amass
 echo -e ""
 echo -e "${On_Black}INSTALLING AMASS${NC}"
@@ -71,6 +73,7 @@ sudo cp gobuster /usr/local/bin
 cd $recon
 
 # SecLists
+cd $wrdlst
 echo -e ""
 echo -e "${On_Black}CLONNING SECLISTS${NC}"
 git clone https://github.com/danielmiessler/SecLists.git
@@ -86,6 +89,7 @@ echo -e ""
 cd $recon
 
 # content_discovery_all.txt
+cd $wrdlst
 echo -e "${On_Black}DOWNLOADING CONTENT_DISCOVERY_ALL.TXT${NC}"
 wget https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10/raw/c81a34fe84731430741e0463eb6076129c20c4c0/content_discovery_all.txt
 echo -e ""
@@ -93,6 +97,7 @@ echo -e ""
 cd $recon
 
 # rockyou
+cd $wrdlst
 echo -e "${On_Black}DOWNLOADING ROCKYOU.TXT${NC}"
 wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 echo -e ""
@@ -100,6 +105,7 @@ echo -e ""
 cd $recon
 
 # dns wordlist
+cd $wrdlst
 echo -e "${On_Black}DOWNLOAD DNS_WORDLIST.TXT${NC}"
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt -O dns_wordlist.txt
 echo -e ""
