@@ -121,6 +121,7 @@ wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_
 rm aquatone_linux_${arch}_1.7.0.zip
 echo -e "${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
 sudo cp aquatone /usr/local/bin
+rm aquatone && rm LICENSE.txt && rm README.md
 echo -e ""
 
 # Feroxbuster
@@ -131,11 +132,13 @@ if [ $arch == "arm64" ]; then
 	rm aarch64-feroxbuster.zip
 	"${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
 	sudo cp feroxbuster /usr/local/bin
+	rm feroxbuster
 elif [ $arch == "amd64" ]; then
 	wget https://github.com/epi052/feroxbuster/releases/download/v2.4.0/x86_64-linux-feroxbuster.zip && unzip x86_64-linux-feroxbuster.zip
 	rm x86_64-linux-feroxbuster.zip
         "${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
         sudo cp feroxbuster /usr/local/bin
+	rm feroxbuster
 else
 	echo -e "${On_Black}I only consider arm64 and amd64 system architectures.${NC}" 
 	"${On_Black}Check othere arch manualy https://github.com/epi052/feroxbuster/releases${NC}"
