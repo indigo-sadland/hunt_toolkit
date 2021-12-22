@@ -41,3 +41,4 @@
 ### Other
 - cewl
 - evil-winrm
+- torghost
