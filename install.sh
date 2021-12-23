@@ -135,12 +135,14 @@ echo -e "${On_Black}DOWNLOADING FEROXBUSTER${NC}"
 arch=$(dpkg --print-architecture)
 if [ $arch == "arm64" ]; then
 	wget https://github.com/epi052/feroxbuster/releases/download/v2.4.0/aarch64-feroxbuster.zip && unzip aarch64-feroxbuster.zip
+	chmod +x feroxbuster
 	rm aarch64-feroxbuster.zip
 	"${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
 	sudo cp feroxbuster /usr/local/bin
 	rm feroxbuster
 elif [ $arch == "amd64" ]; then
 	wget https://github.com/epi052/feroxbuster/releases/download/v2.4.0/x86_64-linux-feroxbuster.zip && unzip x86_64-linux-feroxbuster.zip
+	chmod +x feroxbuster
 	rm x86_64-linux-feroxbuster.zip
         "${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
         sudo cp feroxbuster /usr/local/bin
