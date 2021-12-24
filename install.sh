@@ -6,17 +6,17 @@ NC='\033[0m'
 # Dependencies
 echo -e "${On_Black}INSTALLING DEPENDENCIES${NC}"
 sudo add-apt-repository -y ppa:webupd8team/java
-sudo apt update
-sudo apt install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev curl zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr
-sudo apt install sed
-sudo apt install git
-sudo apt install ruby-full
-sudo apt install python3-pip
-sudo apt install nmap
-sudo apt install chromium-browser
-sudo apt install john -y
-sudo apt install exiftool
-sudo apt install cython3
+sudo apt -y update
+sudo apt -y install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev curl zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr
+sudo apt -y install sed
+sudo apt -y install git
+sudo apt -y install ruby-full
+sudo apt -y install python3-pip
+sudo apt -y install nmap
+sudo apt -y install chromium-browser
+sudo apt -y install john -y
+sudo apt -y install exiftool
+sudo apt -y install cython3
 
 # Create main dir
 main=$HOME/hunt
@@ -30,7 +30,8 @@ recon=$main/recon
 mkdir $recon
 cd $recon
 
-wrdlst=$recon/wrdlists
+wrdlst=$recon/WRDLST
+mkdir $wrdlst
 
 # Amass
 echo -e ""
