@@ -7,12 +7,8 @@
 - ffuf
 - pymeta
 - gobuster
-- secLists
-- wordlists
-- content_discovery_all.txt
-- dns wordlist
 - spiderfoot
-- aquatone
+- gowitness
 - feroxbuster
 - bfac
 - holehe
@@ -21,6 +17,12 @@
 - httprobe
 - git-hound
 - gitTools
+#### Wordlists
+- secLists
+- wordlists
+- content_discovery_all.txt
+- dns wordlist
+
 
 ### Scanners
 - sqlmap
