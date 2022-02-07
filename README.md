@@ -39,6 +39,7 @@
 - PEAS-ng
 - enum4linux-ng
 - impacket
+- nishang
 
 ### Other
 - cewl
