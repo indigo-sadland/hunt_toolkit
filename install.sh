@@ -124,34 +124,19 @@ echo -e ""
 cd $recon
 
 # SpiderFoot
-<<<<<<< HEAD
 echo "${On_Black}INSTALLING SPIDERFOOT${NC}"
-=======
-echo -e "${On_Black}ISNTALLING SPIDERFOOT${NC}"
->>>>>>> 74e44982c02aa7a6f97c8782c81cb320ae1d4311
 git clone https://github.com/smicallef/spiderfoot.git && cd spiderfoot 
 pip3 install -r requirements.txt
 echo -e ""
 
 cd $recon
 
-# Aquatone
-<<<<<<< HEAD
+# Gowitness
 echo "${On_Black}INSTALLING GOWITNESS${NC}"
 git clone https://github.com/sensepost/gowitness && cd gowitness && go get && go build -o gowitness main.go
 echo "${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
 sudo cp gowitness /usr/local/bin
 echo ""
-=======
-echo -e "${On_Black}DOWNLOADING AQUATONE${NC}"
-arch=$(dpkg --print-architecture)
-wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_${arch}_1.7.0.zip && unzip aquatone_linux_${arch}_1.7.0.zip
-rm aquatone_linux_${arch}_1.7.0.zip
-echo -e "${On_Black}COPYING BINARY TO /usr/local/bin${NC}"
-sudo cp aquatone /usr/local/bin
-rm aquatone && rm LICENSE.txt && rm README.md
-echo -e ""
->>>>>>> 74e44982c02aa7a6f97c8782c81cb320ae1d4311
 
 # Feroxbuster
 echo -e "${On_Black}DOWNLOADING FEROXBUSTER${NC}"
@@ -333,6 +318,11 @@ git clone https://github.com/SecureAuthCorp/impacket && cd impacket && sudo pip3
 echo -e ""
 
 cd $enumesc
+
+# nishang
+echo -e "${On_Black}CLONNING NISHANG${NC}"
+git clone https://github.com/samratashok/nishang
+echo -e ""
 
 echo -e "------"
 echo ""
